@@ -17,6 +17,7 @@
 ### Etkinlik Sayfasına Ulaşmak İçin Üye Girişi Gereklidir ###
 
 - Firebase ile üyelik girişi için /login sayfasına gidelim.
+- Kayıt işleminizi /register sayfasından yapabilirsiniz.
 - Örnek üyelik email: casecalismasi@etstur.com password: 123456
 - Daha sonra sayfalar arasında geçiş yapabilirsiniz.
 
