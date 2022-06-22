@@ -1,25 +1,31 @@
-import logo from './logo.svg';
-import './App.css';
+
+import { Routes, Route } from 'react-router-dom'
+import FirebaseContext from './context/firebaseContex';
+import { useContext } from 'react';
+
+// Pages are imported here
+import PrivateRoute from './routes/PrivateRoute';
+import PublicRoute from './routes/PublicRoute';
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+  const { user } = useContext(FirebaseContext);
+
+
+  if (user) {
+    return (
+      <Routes>
+        <Route path='/*' element={<PrivateRoute />} />
+      </Routes>
+    )
+  } else {
+    return (
+      <Routes>
+        <Route path='/*' element={<PublicRoute />} />
+      </Routes>
+    )
+  }
+
 }
+
 
 export default App;

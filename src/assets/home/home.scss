@@ -1,0 +1,119 @@
+.home {
+    width: 100%;
+    height: 100vh;
+    background: #efefef;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+
+    .header {
+        width: 100%;
+        height: 250px;
+        background: #9fc088;
+        position: absolute;
+        top: 0;
+
+        &__container {
+            margin: auto;
+            width: 85%;
+            padding: 25px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+
+            h1 {
+                font-size: 40px;
+                font-weight: 600;
+                text-transform: uppercase;
+                color: #000;
+            }
+
+            i {
+                position: absolute;
+                top: 120px;
+                font-size: 25px;
+                animation: blind 1s linear infinite;
+            }
+        }
+    }
+
+    &__container {
+        width: 85%;
+        background: #fff;
+        padding: 15px;
+        box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.5);
+        position: absolute;
+        margin-top: 50px;
+
+        &__slider {
+            margin-bottom: 50px;
+        }
+
+        &__footer {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            a {
+                color: #111;
+                cursor: pointer;
+                margin-right: 15px;
+                font-weight: 600;
+
+                span {
+                    color: #000;
+                    font-weight: 600;
+                }
+
+                &:hover {
+                    color: #774360;
+                }
+
+                button {
+                    padding: 5px 15px;
+                    background: #9fc088;
+                    color: #000;
+                    border-radius: 20px;
+                }
+            }
+        }
+    }
+}
+
+@keyframes blind {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 100;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .home__container__footer {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        font-size: 12px;
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    .header {
+        &__container {
+           
+            h1 {
+                font-size: 25px !important;
+            }
+            h4 {
+                font-size: 12px !important;
+                margin-top: 15px;
+            }
+        }
+    }
+}
